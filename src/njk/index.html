@@ -5,58 +5,67 @@
 {% block content %}
 
 <div class="container">
-  <div class="row">
-    <div class="col">
-    <h1>Band Members</h1>
-    <p class="author">By {% for author in authors %}
-      <a href="{{ author.link }}" target="_blank">{{ author.name }}</a>{% if not loop.last %}{% if loop.revindex0 == 1 %} and {% else %}, {% endif %}{% endif %} {% endfor %}
-      <br> Published {{ publish_date }}
-    </p>
-    </div>
+  <div class="jumbotron">
+    <img src="assets/img/queen-logo-black.png" class="img-fluid">
   </div>
   <div class="row">
     <div class="col">
     <p>
-      Formed in 1970, Queen is a British rock band. Hit songs including "Bohemian Rhapsody" and "We Are the Champions" led the group to great success and consideration as one of the greatest bands of all-time. <a href="detail-page.html">link to detail-page.html</a> 
+      Formed in 1970, Queen is a British rock band. Hit songs including "Bohemian Rhapsody" and "We Are the Champions" led the group to great success and consideration as one of the greatest bands of all-time. 
     </p>
+    <div class="row">
+    <div class="col">
+    <h1>Band Members</h1>
+    </div>
+  </div>
+  
 
       <div class="card-deck">
+
         <div class="card">
-          <img class="card-img-top" alt="Freddy Mercury picture" src="assets/img/members/freddie-mercury-bw.jpg">
+          <img class="card-img-top" class="image fluid" alt="Freddy Mercury picture" src="assets/img/members/freddie-mercury-bw.jpg">
           <div class="card body">
             <h5 class="card-title"><a href="freddy-mercury.html">Freddy Mercury</a></h5>  
           </div>
         </div> 
         
         <div class="card">
-          <img class="card-img-top" alt="John Deacon picture" src="assets/img/members/john-deacon-bw.jpg"
+          <img class="card-img-top" alt="John Deacon picture" src="assets/img/members/john-deacon-bw.jpg">
           <div class="card body">
-            <h5 class="card-title">John Deacon</h5>
+            <h5 class="card-title"><a href="john-deacon.html">John Deacon</a></h5>
           </div>
         </div>  
 
         <div class="card">
-          <img class="card-img-top" alt="Brian May picture" src="assets/img/members/Brian-may-bw.jpg"
+          <img class="card-img-top" alt="Brian May picture" src="assets/img/members/Brian-may-bw.jpg">
           <div class="card body">
-            <h5 class="card-title">Brian May</h5>
+            <h5 class="card-title"><a href="brian-may.html">Brian May</a></h5>
           </div>
         </div>  
         
         <div class="card">
-          <img class="card-img-top" alt="Brian May picture" src="assets/img/members/roger-taylor-bw.jpg"
+          <img class="card-img-top" alt="Roger Taylor picture" src="assets/img/members/roger-taylor-bw.jpg">
           <div class="card body">
-            <h5 class="card-title">Roger Taylor</h5>
+            <h5 class="card-title"><a href="roger-taylor.html">Roger Taylor</a></h5>
           </div>
         </div>
-      </div>
 
-      <ul> 
-        {% for book in books %}
-          <li>{{ book.title }}, {{ book.author }}</li>
-        {% else %}
-          <li>This would display if the 'books' collection were empty</li>
+      </div>
+      <br>
+      <h1>Discography</h1>
+      <div>
+        {% for album in discography %}
+          <ul class="list-unstyled">
+            <li class="media">
+              <img class="mr-3" src="{{ album.image }}">
+              <div class="media-body">
+                <h5 class="mt-0 mb-1">{{ album.title}}</h5>
+                {{ album.year }}
+              </div>
+            </li>
+          </ul>
         {% endfor %}
-     </ul>
+        </div>
     </div>
   </div>
 </div>
