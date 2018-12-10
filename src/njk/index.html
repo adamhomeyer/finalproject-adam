@@ -1,6 +1,6 @@
 {% extends '_layouts/base.njk' %}
 
-{% block page_title %}Queen who?{% endblock %}
+{% block page_title %}QUEEN Who?{% endblock %}
 
 {% block content %}
 
@@ -57,7 +57,7 @@
         {% for album in discography %}
           <ul class="list-unstyled">
             <li class="media">
-              <img class="mr-3" src="{{ album.image }}">
+              <img class="mr-3" src="assets/img/discs/{{ album.image }}">
               <div class="media-body">
                 <h5 class="mt-0 mb-1">{{ album.title}}</h5>
                 {{ album.year }}
